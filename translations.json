@@ -1,0 +1,46 @@
+{
+  "pl": {
+    "easy": "Łatwy (9x9)",
+    "medium": "Średni (16x16)",
+    "hard": "Trudny (30x16)",
+    "best": "Najlepszy czas",
+    "flagsLeft": "Pozostałe flagi",
+    "newGame": "Nowa gra",
+    "win": "Wygrałeś!",
+    "lose": "Przegrałeś!",
+    "showMines": "Pokaż bomby",
+    "changeLang": "Zmień język",
+    "level": "Poziom",
+    "title": "Saper",
+    "buttonExplanationsTitle": "Opis przycisków",
+    "buttonExplanationsList": [
+      { "btn": "Nowa gra", "desc": "Rozpoczyna nową grę." },
+      { "btn": "Pokaż bomby", "desc": "Pokazuje lokalizację min przez 3 sekundy." },
+      { "btn": "Zmień język", "desc": "Przełącza język interfejsu." },
+      { "btn": "Poziom", "desc": "Wybierz poziom trudności." },
+      { "btn": "Flagi", "desc": "Liczba pozostałych min do oznaczenia." }
+    ]
+  },
+  "en": {
+    "easy": "Easy (9x9)",
+    "medium": "Medium (16x16)",
+    "hard": "Hard (30x16)",
+    "best": "Best Time",
+    "flagsLeft": "Flags Left",
+    "newGame": "New Game",
+    "win": "You Win!",
+    "lose": "Game Over!",
+    "showMines": "Show mines",
+    "changeLang": "Change language",
+    "level": "Level",
+    "title": "Minesweeper",
+    "buttonExplanationsTitle": "Button explanations",
+    "buttonExplanationsList": [
+      { "btn": "New Game", "desc": "Starts a new game." },
+      { "btn": "Show mines", "desc": "Shows mine locations for 3 seconds." },
+      { "btn": "Change language", "desc": "Switches interface language." },
+      { "btn": "Difficulty", "desc": "Select game difficulty level." },
+      { "btn": "Flags", "desc": "Number of mines left to mark." }
+    ]
+  }
+}

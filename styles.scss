@@ -1,0 +1,231 @@
+$bg: #f0f0f0;
+$cell: #ddd;
+$cell-hover: #ccc;
+$mine: #f44336;
+$flag: #ff9800;
+$text: #333;
+$primary: #1976d2;
+$font: 'Segoe UI', sans-serif;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button-style {
+  padding: 0.5em 1em;
+  border: none;
+  background: $primary;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+  min-width: 120px;
+  text-align: center;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: darken($primary, 15%);
+  }
+}
+
+@mixin card-box {
+  background: #fafafa;
+  border: 1px solid #ccc;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: $font;
+  background: $bg;
+  color: $text;
+  @include flex-center;
+  flex-direction: column;
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+h1 {
+  margin: 0.5em 0;
+  font-size: 2em;
+}
+
+.controls {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1em;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  gap: 2px;
+  margin-bottom: 1em;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  background: $cell;
+  @include flex-center;
+  font-size: 1rem;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 2px;
+  transition: background 0.2s;
+
+  &:hover {
+    background: $cell-hover;
+  }
+
+  &.revealed {
+    background: white;
+    cursor: default;
+  }
+
+  &.mine {
+    background: $mine;
+  }
+
+  &.flag {
+    background: $flag;
+  }
+}
+
+.debug-mine {
+  animation: pulse-red 1.5s infinite;
+  background: #ff6666 !important;
+}
+
+@keyframes pulse-red {
+  0%, 100% {
+    box-shadow: 0 0 8px 3px rgba(244, 67, 54, 0.7);
+    border-radius: 2px;
+  }
+  50% {
+    box-shadow: 0 0 12px 6px rgba(244, 67, 54, 1);
+    border-radius: 2px;
+  }
+}
+
+.status {
+  display: flex;
+  gap: 2em;
+  margin-bottom: 1em;
+}
+
+button,
+select {
+  @include button-style;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 1em;
+  min-width: 220px;
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.3em 0.6em;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button, select {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .grid-container {
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .game-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grid {
+    display: grid;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1650px) {
+  .button-explanations {
+    position: static;
+    margin: 15px auto 0 auto;
+    width: auto;
+    max-width: 50vw;
+    @include card-box;
+  }
+}
+
+.game-wrapper {
+  position: relative;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.grid-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: max-content;
+  margin: 0 auto;
+}
+
+#grid {
+  display: grid;
+  gap: 2px;
+}
+
+.button-explanations {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 20px;
+  max-width: 280px;
+  width: 280px;
+  font-size: 0.9rem;
+  color: $text;
+  @include card-box;
+  user-select: none;
+  height: fit-content;
+  z-index: 10;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-origin: top left;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
