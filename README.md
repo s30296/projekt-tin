@@ -1,6 +1,6 @@
 # Saper / Minesweeper
 
-Prosta gra Saper (Minesweeper) napisana w czystym JavaScript, CSS i HTML.
+Prosta gra Saper (Minesweeper) napisana w czystym JavaScript, CSS/SCSS i HTML.
 
 ## Funkcje
 
@@ -23,7 +23,7 @@ Prosta gra Saper (Minesweeper) napisana w czystym JavaScript, CSS i HTML.
 
 ## Uruchomienie
 
-Do działania wystarczy otworzyć plik index.html w przeglądarce.
+Do działania wymagany jest lokalny serwer HTTP. Otwieranie pliku index.html bezpośrednio (jako file://) spowoduje błąd wczytywania translations.json.
 
 Kompilacja SCSS do CSS jest opcjonalna – gotowy plik styles.css znajduje się w repozytorium.
 
